@@ -1,16 +1,27 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import logo from './assets/images/logo.svg'
+import styles from './App.module.css'
 import robotdata from './mockdata/robot.json'
 import Robot from './components/Robot'
 
 function App() {
   return (
-    <ul>
-      {robotdata.map((data) => (
-        <Robot id={data.id} name={data.name} email={data.email} />
-      ))}
-    </ul>
+    <div className={styles.app}>
+      <div className={styles.appHeader}>
+        <img src={logo} alt="logo" className={styles.appLogo} />
+        <h1>Robot List</h1>
+      </div>
+      <div className={styles.robotList}>
+        {robotdata.map((data) => (
+          <Robot
+            id={data.id}
+            name={data.name}
+            email={data.email}
+            key={data.id}
+          />
+        ))}
+      </div>
+    </div>
   )
 }
 
