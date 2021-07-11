@@ -3,6 +3,7 @@ import logo from './assets/images/logo.svg'
 import styles from './App.module.css'
 import robotdata from './mockdata/robot.json'
 import Robot from './components/Robot'
+import ShoppingCart from './components/ShoppingCart'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <img src={logo} alt="logo" className={styles.appLogo} />
         <h1>Robot List</h1>
       </div>
+      <ShoppingCart />
       <div className={styles.robotList}>
         {robotdata.map((data) => (
           <Robot
